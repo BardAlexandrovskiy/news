@@ -21,7 +21,7 @@ class App extends React.Component {
       logout
     } = this.props;
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         {profileError ? (
           <Error
             hideError={hideError}

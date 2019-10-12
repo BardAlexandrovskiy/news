@@ -35,8 +35,6 @@ class News extends React.Component {
   render() {
     const { arrNews, preloader } = this.state;
     const { error, hideError } = this.props;
-    console.log(error);
-    console.log(arrNews);
     return (
       <NewsContainer>
         {error ? (
