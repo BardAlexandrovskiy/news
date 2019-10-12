@@ -1,7 +1,7 @@
 import React from 'react';
 import Main from '../main/index';
 import News from '../news/index';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import Footer from '../../components/footer/index';
 import Header from '../../components/header/index';
 import { connect } from 'react-redux';
@@ -21,7 +21,7 @@ class App extends React.Component {
       logout
     } = this.props;
     return (
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         {profileError ? (
           <Error
             hideError={hideError}
@@ -48,7 +48,7 @@ class App extends React.Component {
           )}
         />
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
