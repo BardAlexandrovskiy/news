@@ -1,5 +1,14 @@
 import React from 'react';
-import { ProfileContainer, ButtonExit } from './styles';
+import {
+  ProfileContainer,
+  ButtonExit,
+  InfoContainer,
+  ImgUser,
+  InfoList,
+  InfoItem,
+  InfoTitle
+} from './styles';
+import adminImg from './img/admin.png';
 
 class Profile extends React.Component {
   handleClickButtonExit = () => {
@@ -10,7 +19,16 @@ class Profile extends React.Component {
   render() {
     return (
       <ProfileContainer>
-        PROFILE
+        <InfoContainer>
+          <ImgUser src={adminImg} />
+          <InfoList>
+            <InfoTitle>Админ</InfoTitle>
+            <InfoItem>21 год</InfoItem>
+            <InfoItem>Полтава</InfoItem>
+            <InfoItem>Ищет работу</InfoItem>
+            <InfoItem>Ибо нужно что-то есть</InfoItem>
+          </InfoList>
+        </InfoContainer>
         <ButtonExit onClick={this.handleClickButtonExit}>Выйти</ButtonExit>
       </ProfileContainer>
     );

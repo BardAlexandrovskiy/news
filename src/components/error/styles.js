@@ -13,7 +13,8 @@ export const LockContainer = styled.div`
 `;
 
 export const ErrorContainer = styled.div`
-  width: 60%;
+  width: 50%;
+  min-height: 200px;
   background-color: #052c6e;
   display: flex;
   flex-direction: column;

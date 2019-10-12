@@ -1,4 +1,4 @@
-import { GET_PASSWORD_AND_LOGIN, HIDE_ERROR, LOGOUT } from '../actions/profile';
+import { GET_PASSWORD_AND_LOGIN, HIDE_ERROR, LOGOUT } from '../actions/index';
 
 const initialState = {
   access: JSON.parse(localStorage.getItem('profileAccess')) || false,

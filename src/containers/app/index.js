@@ -8,8 +8,8 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Login from '../../containers/login/index';
 import Profile from '../profile/index';
-import { getPasswordAndLogin, hideError, logout } from '../../actions/profile';
-import ErrorProfile from '../../components/error/index';
+import { getPasswordAndLogin, hideError, logout } from '../../actions/index';
+import Error from '../../components/error/index';
 
 class App extends React.Component {
   render() {
@@ -22,7 +22,12 @@ class App extends React.Component {
     } = this.props;
     return (
       <BrowserRouter>
-        {profileError ? <ErrorProfile hideError={hideError} /> : null}
+        {profileError ? (
+          <Error
+            hideError={hideError}
+            text="Имя пользователя или пароль введены не верно."
+          />
+        ) : null}
         <Header />
         <Route exact path="/" component={Main} />
         <Route path="/news" component={News} />

@@ -1,5 +1,6 @@
 export const GET_PASSWORD_AND_LOGIN = 'GET_PASSWORD_AND_LOGIN';
 export const HIDE_ERROR = 'HIDE_ERROR';
+export const SHOW_ERROR = 'SHOW_ERROR';
 export const LOGOUT = 'LOGOUT';
 
 export function getPasswordAndLogin(object) {
@@ -18,5 +19,11 @@ export function logout() {
 export function hideError() {
   return {
     type: HIDE_ERROR
+  };
+}
+
+export function showError() {
+  return {
+    type: SHOW_ERROR
   };
 }

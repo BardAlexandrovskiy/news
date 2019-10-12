@@ -14,3 +14,9 @@ export const Text = styled.p`
   opacity: 0.8;
   font-size: 13px;
 `;
+
+export const TextLink = styled.a`
+  color: whitesmoke;
+  font-size: 13px;
+  text-decoration: none;
+`;
