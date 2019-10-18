@@ -8,7 +8,10 @@ const initialState = {
 export default function profileReducer(state = initialState, action) {
   switch (action.type) {
     case GET_PASSWORD_AND_LOGIN:
-      if (action.data.login === 'Admin' && action.data.password === '12345') {
+      if (
+        action.data.login === 'Alexandr' &&
+        action.data.password === 'qwerty'
+      ) {
         localStorage.setItem('profileAccess', true);
         return { ...state, access: true };
       }

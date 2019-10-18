@@ -22,11 +22,12 @@ class Profile extends React.Component {
         <InfoContainer>
           <ImgUser src={adminImg} />
           <InfoList>
-            <InfoTitle>Админ</InfoTitle>
+            <InfoTitle>Александр</InfoTitle>
             <InfoItem>21 год</InfoItem>
             <InfoItem>Полтава</InfoItem>
             <InfoItem>Ищет работу</InfoItem>
             <InfoItem>Ибо нужно что-то есть</InfoItem>
+            <InfoItem>Чтоб не умереть</InfoItem>
           </InfoList>
         </InfoContainer>
         <ButtonExit onClick={this.handleClickButtonExit}>Выйти</ButtonExit>

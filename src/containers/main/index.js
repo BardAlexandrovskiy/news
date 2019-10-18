@@ -17,43 +17,36 @@ import img8 from './img/8.png';
 
 class Main extends React.Component {
   render() {
+    const arrMems = [
+      { description: 'Тестирование программного обеспечения', imgSrc: img1 },
+      {
+        description: 'Миграция в Облако (иногда бывают сложности)',
+        imgSrc: img2
+      },
+      {
+        description: 'Когда не все понимают, чем ты занимаешься',
+        imgSrc: img3
+      },
+      { description: 'Как я встретил вашу маму', imgSrc: img4 },
+      { description: 'Я обожаю Windows PowerShell', imgSrc: img5 },
+      { description: 'Arduino-проект', imgSrc: img6 },
+      {
+        description: 'Как программист решает, что пора завести ребёнка',
+        imgSrc: img7
+      },
+      { description: 'Реактивное программирование', imgSrc: img8 }
+    ];
     return (
       <MainContainer>
         <Title>Не понравились новости? Посмотрите на это.</Title>
-        <MemsItemContainer>
-          <Description>Тестирование программного обеспечения</Description>
-          <MemImg src={img1} />
-        </MemsItemContainer>
-        <MemsItemContainer>
-          <Description>Миграция в Облако (иногда бывают сложности)</Description>
-          <MemImg src={img2} />
-        </MemsItemContainer>
-        <MemsItemContainer>
-          <Description>Когда не все понимают, чем ты занимаешься</Description>
-          <MemImg src={img3} />
-        </MemsItemContainer>
-        <MemsItemContainer>
-          <Description>Как я встретил вашу маму</Description>
-          <MemImg src={img4} />
-        </MemsItemContainer>
-        <MemsItemContainer>
-          <Description>Я обожаю Windows PowerShell</Description>
-          <MemImg src={img5} />
-        </MemsItemContainer>
-        <MemsItemContainer>
-          <Description>Arduino-проект</Description>
-          <MemImg src={img6} />
-        </MemsItemContainer>
-        <MemsItemContainer>
-          <Description>
-            Как программист решает, что пора завести ребёнка
-          </Description>
-          <MemImg src={img7} />
-        </MemsItemContainer>
-        <MemsItemContainer>
-          <Description>Реактивное программирование</Description>
-          <MemImg src={img8} />
-        </MemsItemContainer>
+        {arrMems.map((item, index) => {
+          return (
+            <MemsItemContainer key={index}>
+              <Description>{item.description}</Description>
+              <MemImg src={item.imgSrc} />
+            </MemsItemContainer>
+          );
+        })}
       </MainContainer>
     );
   }

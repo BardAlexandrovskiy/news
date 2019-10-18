@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.header`
   height: 60px;
@@ -10,7 +10,7 @@ export const HeaderContainer = styled.header`
   padding: 0 10px;
 `;
 
-export const Logo = styled(NavLink)`
+export const Logo = styled(Link)`
   font-size: 20px;
   background-color: whitesmoke;
   color: #000;

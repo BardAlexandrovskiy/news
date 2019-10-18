@@ -19,3 +19,7 @@ body,
 body {
   min-width: 320px;
 }
+
+.active {
+  opacity: 0.5;
+}
