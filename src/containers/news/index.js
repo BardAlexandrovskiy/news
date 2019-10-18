@@ -44,7 +44,7 @@ class News extends React.Component {
           />
         ) : null}
         {preloader ? <Preloader /> : null}
-        <Title>Все возможные новости, пожалуйста</Title>
+        <Title>Все возможные новости, пожалуйста.</Title>
         {arrNews.map((item, index) => (
           <NewsItem
             key={index}

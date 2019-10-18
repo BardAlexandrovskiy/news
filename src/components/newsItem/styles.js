@@ -30,7 +30,7 @@ export const SourceLink = styled.a`
   color: #4577d4;
   transition: opacity 0.3s;
   text-decoration: none;
-  display: block;
+  display: inline-block;
   margin-bottom: 3px;
 
   &:hover {
