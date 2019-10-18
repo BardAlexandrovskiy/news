@@ -10,6 +10,7 @@ import Login from '../../containers/login/index';
 import Profile from '../profile/index';
 import { getPasswordAndLogin, hideError, logout } from '../../actions/index';
 import Error from '../../components/error/index';
+import { GlobalStyle } from './styles';
 
 class App extends React.Component {
   render() {
@@ -28,6 +29,7 @@ class App extends React.Component {
             text="Имя пользователя или пароль введены не верно."
           />
         ) : null}
+        <GlobalStyle />
         <Header />
         <Route exact path="/" component={Main} />
         <Route path="/news" component={News} />

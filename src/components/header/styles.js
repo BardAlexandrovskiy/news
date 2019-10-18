@@ -31,12 +31,12 @@ export const NewsLink = styled(NavLink)`
   margin-right: 20px;
   color: whitesmoke;
   cursor: pointer;
-  transition: opacity 0.2s;
   font-size: 15px;
   text-decoration: none;
+  transition: opacity 0.2s;
 
   &:hover {
-    opacity: 0.6;
+    opacity: 0.5;
   }
 `;
 
