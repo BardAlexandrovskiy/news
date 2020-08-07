@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   ProfileContainer,
   ButtonExit,
@@ -6,9 +6,9 @@ import {
   ImgUser,
   InfoList,
   InfoItem,
-  InfoTitle
-} from './styles';
-import adminImg from './img/admin.png';
+  InfoTitle,
+} from "./styles";
+import adminImg from "./img/admin.png";
 
 class Profile extends React.Component {
   handleClickButtonExit = () => {
@@ -23,7 +23,7 @@ class Profile extends React.Component {
           <ImgUser src={adminImg} />
           <InfoList>
             <InfoTitle>Александр</InfoTitle>
-            <InfoItem>21 год</InfoItem>
+            <InfoItem>22 год</InfoItem>
             <InfoItem>Полтава</InfoItem>
             <InfoItem>Ищет работу</InfoItem>
             <InfoItem>Ибо нужно что-то есть</InfoItem>

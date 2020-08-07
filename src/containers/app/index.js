@@ -1,16 +1,16 @@
-import React from 'react';
-import Main from '../main/index';
-import News from '../news/index';
-import { HashRouter, Route } from 'react-router-dom';
-import Footer from '../../components/footer/index';
-import Header from '../../components/header/index';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import Login from '../../containers/login/index';
-import Profile from '../profile/index';
-import { getPasswordAndLogin, hideError, logout } from '../../actions/index';
-import Error from '../../components/error/index';
-import { GlobalStyle } from './styles';
+import React from "react";
+import Main from "../main/index";
+import News from "../news/index";
+import { HashRouter, Route } from "react-router-dom";
+import Footer from "../../components/footer/index";
+import Header from "../../components/header/index";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
+import Login from "../../containers/login/index";
+import Profile from "../profile/index";
+import { getPasswordAndLogin, hideError, logout } from "../../actions/index";
+import Error from "../../components/error/index";
+import { GlobalStyle } from "./styles";
 
 class App extends React.Component {
   render() {
@@ -19,16 +19,16 @@ class App extends React.Component {
       getPasswordAndLogin,
       profileError,
       hideError,
-      logout
+      logout,
     } = this.props;
     return (
       <HashRouter>
-        {profileError ? (
+        {profileError && (
           <Error
             hideError={hideError}
             text="Имя пользователя или пароль введены не верно."
           />
-        ) : null}
+        )}
         <GlobalStyle />
         <Header />
         <Route exact path="/" component={Main} />
@@ -55,22 +55,19 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     profileAccess: state.profile.access,
-    profileError: state.profile.error
+    profileError: state.profile.error,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    getPasswordAndLogin: object => dispatch(getPasswordAndLogin(object)),
+    getPasswordAndLogin: (object) => dispatch(getPasswordAndLogin(object)),
     hideError: () => dispatch(hideError()),
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
