@@ -19,7 +19,7 @@ class News extends React.Component {
     const { showError } = this.props;
     this.setState({ preloader: true });
     fetch(
-      'https://newsapi.org/v2/top-headlines?country=ua&apiKey=10ade8962c444f4b9c9a49fd8f56589b'
+      'http://newsapi.org/v2/top-headlines?country=ua&apiKey=10ade8962c444f4b9c9a49fd8f56589b'
     )
       .then(res => {
         if (res.status === 200) {
@@ -37,12 +37,12 @@ class News extends React.Component {
     const { error, hideError } = this.props;
     return (
       <NewsContainer>
-        {error ? (
+        {error && (
           <Error
             hideError={hideError}
             text="Нет ответа от сервера. Попробуйте зайти позже."
           />
-        ) : null}
+        )}
         {preloader ? <Preloader /> : null}
         <Title>Все возможные новости, пожалуйста.</Title>
         {arrNews.map((item, index) => (

@@ -22,15 +22,16 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
       "airbnb",
-      "prettier"
+      "react-app",
+      "plugin:prettier/recommended"
     ],
     "rules": {
       "jsx-quotes": [
         1,
         "prefer-double"
-      ]
+      ],
+      "react/jsx-filename-extension": 0
     },
     "plugins": [
       "prettier"
