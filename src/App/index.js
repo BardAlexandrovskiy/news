@@ -1,15 +1,15 @@
 import React from "react";
-import Main from "../main/index";
-import News from "../news/index";
+import Main from "../containers/Main";
+import News from "../containers/News";
 import { HashRouter, Route } from "react-router-dom";
-import Footer from "../../components/footer/index";
-import Header from "../../components/header/index";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import Login from "../../containers/login/index";
-import Profile from "../profile/index";
-import { getPasswordAndLogin, hideError, logout } from "../../actions/index";
-import Error from "../../components/error/index";
+import Login from "../containers/Login/index";
+import Profile from "../containers/Profile";
+import { getPasswordAndLogin, hideError, logout } from "../actions";
+import Error from "../components/Error";
 import { GlobalStyle } from "./styles";
 
 class App extends React.Component {

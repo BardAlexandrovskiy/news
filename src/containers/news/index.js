@@ -1,10 +1,10 @@
 import React from 'react';
 import { NewsContainer, Title } from './styles';
-import NewsItem from '../../components/newsItem/index';
-import Preloader from '../../components/preloader/index';
+import NewsItem from '../../components/NewsItem';
+import Preloader from '../../components/Preloader';
 import { connect } from 'react-redux';
-import { hideError, showError } from '../../actions/index';
-import Error from '../../components/error/index';
+import { hideError, showError } from '../../actions';
+import Error from '../../components/Error';
 
 class News extends React.Component {
   constructor(props) {
