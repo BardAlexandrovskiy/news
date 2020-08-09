@@ -18,9 +18,11 @@ class News extends React.Component {
   componentDidMount() {
     const { showError } = this.props;
     this.setState({ preloader: true });
-    fetch(
-      'http://newsapi.org/v2/top-headlines?country=ua&apiKey=10ade8962c444f4b9c9a49fd8f56589b'
-    )
+    const url = 'http://newsapi.org/v2/top-headlines?' +
+          'country=ua&' +
+          'apiKey=10ade8962c444f4b9c9a49fd8f56589b';
+    const req = new Request(url);
+    fetch(req)
       .then(res => {
         if (res.status === 200) {
           return res.json();
