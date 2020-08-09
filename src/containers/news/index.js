@@ -18,7 +18,7 @@ class News extends React.Component {
   componentDidMount() {
     const { showError } = this.props;
     this.setState({ preloader: true });
-    const url = 'http://newsapi.org/v2/top-headlines?' +
+    const url = 'https://newsapi.org/v2/top-headlines?' +
           'country=ua&' +
           'apiKey=10ade8962c444f4b9c9a49fd8f56589b';
     const req = new Request(url);
