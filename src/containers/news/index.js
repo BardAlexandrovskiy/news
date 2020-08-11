@@ -26,7 +26,7 @@ class News extends React.Component {
         throw new Error(res.status);
       })
       .then(newsObj => {
-        console.log(newsObj)
+        console.log(newsObj.results[0])
         return this.setState({ arrNews: newsObj.results })
       })
       .catch(() => showError())
@@ -45,16 +45,25 @@ class News extends React.Component {
           />
         )}
         {preloader && <Preloader />}
-        <Title>Все возможные новости, пожалуйста.</Title>
-        {arrNews.map((item, index) => (
-          <NewsItem
-            key={index}
-            description={item.abstract}
-            title={item.title}
-            url={item.url}
-            img={item.multimedia[2].url}
-          />
-        ))}
+        <Title>Latest news:</Title>
+        {arrNews.map((item, index) => {
+          console.log(item)
+          let img;
+
+          if (item.multimedia) {
+            img = item.multimedia[2].url
+          } else img = null;
+
+          return (
+            < NewsItem
+              key={index}
+              description={item.abstract}
+              title={item.title}
+              url={item.url}
+              img={img}
+            />
+          )
+        })}
       </NewsContainer>
     );
   }
