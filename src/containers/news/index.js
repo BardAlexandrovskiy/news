@@ -18,18 +18,17 @@ class News extends React.Component {
   componentDidMount() {
     const { showError } = this.props;
     this.setState({ preloader: true });
-    const url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=ua&' +
-          'apiKey=10ade8962c444f4b9c9a49fd8f56589b';
-    const req = new Request(url);
-    fetch(req)
+    fetch('https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=GWNR75tapwV4yS2UbyV16BHepPcUTcZW')
       .then(res => {
         if (res.status === 200) {
           return res.json();
         }
         throw new Error(res.status);
       })
-      .then(newsObj => this.setState({ arrNews: newsObj.articles }))
+      .then(newsObj => {
+        console.log(newsObj)
+        return this.setState({ arrNews: newsObj.results })
+      })
       .catch(() => showError())
       .finally(() => this.setState({ preloader: false }));
   }
@@ -45,15 +44,15 @@ class News extends React.Component {
             text="Нет ответа от сервера. Попробуйте зайти позже."
           />
         )}
-        {preloader ? <Preloader /> : null}
+        {preloader && <Preloader />}
         <Title>Все возможные новости, пожалуйста.</Title>
         {arrNews.map((item, index) => (
           <NewsItem
             key={index}
-            description={item.description}
+            description={item.abstract}
             title={item.title}
             url={item.url}
-            img={item.urlToImage}
+            img={item.multimedia[2].url}
           />
         ))}
       </NewsContainer>
