@@ -31,8 +31,7 @@
         1,
         "prefer-double"
       ],
-      "react/jsx-filename-extension": 0,
-      "react/prop-types": 2
+      "react/jsx-filename-extension": 0
     },
     "plugins": [
       "prettier"

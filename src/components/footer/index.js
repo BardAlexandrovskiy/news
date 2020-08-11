@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <FooterContainer>
       <Text>© 2019 Top news</Text>
-      <TextLink href="mailto:alexandr8558@gmail.co">Email: alexandr8558@gmail.com</TextLink>
+      <TextLink href="mailto:alexandr8558@gmail.com">Email: alexandr8558@gmail.com</TextLink>
       <TextLink
         href="https://developer.nytimes.com/"
         target="_blank"
